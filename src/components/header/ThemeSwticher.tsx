@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../../context/themeContext';
+import Button from '../common/Button';
 
 type ThemeNameType = 'light' | 'dark';
 interface Props {
@@ -10,9 +11,9 @@ interface Props {
 const ThemeSwticher = () => {
   const { themeName, toggle } = useContext(ThemeContext);
   return (
-    <>
-      <button onClick={toggle}>{themeName}</button>
-    </>
+    <Button size="small" scheme="normal" onClick={toggle}>
+      {themeName}
+    </Button>
   );
 };
 export default ThemeSwticher;
