@@ -1,23 +1,37 @@
-import { ThemeProvider } from 'styled-components';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
-import { GlobalStyled } from './style/global';
-import { dark, light } from './style/theme';
-import ThemeSwticher from './components/header/ThemeSwticher';
-import { useContext, useState } from 'react';
-import { BookStoreThemeProvider, ThemeContext } from './context/themeContext';
+import { BookStoreThemeProvider } from './context/themeContext';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Error from './components/common/Error';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: (
+      <Layout>
+        <Home />
+      </Layout>
+    ),
+    errorElement: (
+      <Layout>
+        <Error />
+      </Layout>
+    ),
+  },
+  {
+    path: '/books',
+    element: (
+      <Layout>
+        <div>도서 목록</div>
+      </Layout>
+    ),
+  },
+]);
 
 function App() {
-  //const [themeName, setThemeName] = useState<'light' | 'dark'>('light');
-  const { themeName, toggle } = useContext(ThemeContext);
   return (
     <BookStoreThemeProvider>
-      {/* <ThemeProvider theme={themeName === 'light' ? light : dark}>
-        <GlobalStyled themeName={themeName} />
-        <ThemeSwticher themeName={themeName} setThemeName={toggle} /> */}
-      book store
-      <Layout children={<Home />} />
-      {/* </ThemeProvider> */}
+      <RouterProvider router={router} />
     </BookStoreThemeProvider>
   );
 }

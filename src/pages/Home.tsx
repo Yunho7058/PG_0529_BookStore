@@ -7,14 +7,14 @@ import Title from '../components/common/Title';
 const Home = () => {
   return (
     <>
-      <Title size="small" color="background">
+      {/* <Title size="small" color="background">
         제목
       </Title>
       <Button size="large" scheme="primary">
         버튼
       </Button>
-      <InputText placeholder="여기에 입력!" />
-      <div>홈이야</div>
+      <InputText placeholder="여기에 입력!" /> */}
+      <div>홈 페이지</div>
     </>
   );
 };
