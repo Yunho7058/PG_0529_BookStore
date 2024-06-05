@@ -45,7 +45,7 @@ export const light: Theme = {
   color: {
     primary: 'white',
     background: 'lightgray',
-    secondary: 'red',
+    secondary: 'rgba(0,0,0,0.7)',
     third: 'green',
     border: 'grey',
     text: 'black',
@@ -82,7 +82,7 @@ export const light: Theme = {
     },
     normal: {
       color: 'black',
-      backgroundColor: 'lightgreen',
+      backgroundColor: 'rbga(0,0,0,0.5)',
     },
   },
   borderRadius: {
