@@ -9,7 +9,6 @@ interface Props {
 }
 
 const BooksList = ({ pagination, books }: Props) => {
-  console.log(pagination);
   // 현제페이지가 1이면 앞에 8개 보여주기
   // 현제페이가 2이면 뒤에 9부터 9개 보여주기
   books.slice();
