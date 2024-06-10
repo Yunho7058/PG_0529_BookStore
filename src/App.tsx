@@ -4,6 +4,7 @@ import { BookStoreThemeProvider } from './context/themeContext';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Error from './components/common/Error';
 import Books from './pages/Books';
+import BookDetail from './pages/BookDetail';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <Books />
+      </Layout>
+    ),
+  },
+  {
+    path: '/books/:bookId',
+    element: (
+      <Layout>
+        <BookDetail />
       </Layout>
     ),
   },

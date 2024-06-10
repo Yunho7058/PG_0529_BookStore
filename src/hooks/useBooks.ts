@@ -52,7 +52,6 @@ export const useBooks = () => {
       // 0,8 -> 9, 17 -> 18, 27
       let last = limit * currentPage;
       let first = last === limit ? 0 : last + 1;
-      console.log(first, last);
       setBooks(filterDumy.slice(first, last));
       setPagination({
         totalCount: filterDumy.length,
