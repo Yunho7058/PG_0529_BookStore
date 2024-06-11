@@ -7,7 +7,7 @@ interface Props {
 
 export const GlobalStyled = createGlobalStyle<Props>`
 body{
-    padding: 0px;
+    padding: 30px;
     margin: 0px;
 }
 h1{

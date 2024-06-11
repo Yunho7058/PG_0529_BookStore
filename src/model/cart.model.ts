@@ -1,6 +1,6 @@
 export interface TCart {
   id: number;
-  bookIt: number;
+  bookId: number;
   title: string;
   summary: string;
   quantity: number;

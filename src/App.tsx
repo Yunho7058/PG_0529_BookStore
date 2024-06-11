@@ -5,6 +5,9 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Error from './components/common/Error';
 import Books from './pages/Books';
 import BookDetail from './pages/BookDetail';
+import Cart from './pages/Cart';
+import Order from './pages/Order';
+import OrderList from './pages/OrderList';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +36,30 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <BookDetail />
+      </Layout>
+    ),
+  },
+  {
+    path: '/cart',
+    element: (
+      <Layout>
+        <Cart />
+      </Layout>
+    ),
+  },
+  {
+    path: '/order',
+    element: (
+      <Layout>
+        <Order />
+      </Layout>
+    ),
+  },
+  {
+    path: '/orderList',
+    element: (
+      <Layout>
+        <OrderList />
       </Layout>
     ),
   },
