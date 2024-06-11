@@ -8,6 +8,7 @@ interface TProps {
   scheme: ButtonScheme;
   disabled?: boolean;
   isLoading?: boolean;
+  type?: string;
   onClick?: () => void;
   //로딩상태를 보여줘서 한번에 작동만 할수 있게 한번클릭 한번 작동
 }
@@ -19,6 +20,7 @@ const Button = ({
   disabled,
   isLoading,
   onClick,
+  type,
 }: TProps) => {
   return (
     <Back
@@ -27,6 +29,7 @@ const Button = ({
       disabled={disabled}
       isLoading={isLoading}
       onClick={onClick}
+      type={type}
     >
       {children}
     </Back>
