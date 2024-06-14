@@ -74,7 +74,7 @@ const Order = () => {
                 <fieldset>
                   <label>주소</label>
                   <div className="input">
-                    <InputText />
+                    <InputText inputType="text" />
                     {/* {...register("address",{required:true})} */}
                   </div>
                   <FindAddressBtn
@@ -88,7 +88,7 @@ const Order = () => {
                 <fieldset>
                   <label>상세주소</label>
                   <div className="input">
-                    <InputText />
+                    <InputText inputType="text" />
                     {/* {...register("addressDetail",{required:true})} */}
                   </div>
                 </fieldset>
@@ -97,7 +97,7 @@ const Order = () => {
                 <fieldset>
                   <label>수령인</label>
                   <div className="input">
-                    <InputText />
+                    <InputText inputType="text" />
                     {/* {...register("receiver",{required:true})} */}
                   </div>
                 </fieldset>
@@ -106,7 +106,7 @@ const Order = () => {
                 <fieldset>
                   <label>전화번호</label>
                   <div className="input">
-                    <InputText />
+                    <InputText inputType="text" />
                     {/* {...register("contact",{required:true})} */}
                   </div>
                 </fieldset>

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { TBook, TBookDetail } from '../model/book.model';
+import { TBook, TBookDetail, TBookReviewItem } from '../model/book.model';
 import { fetchBook, likeBook, unlikeBook } from '../api/books.api';
 import { dummyBooks } from '../dumy/dumyBooks';
+import { fetchBookReview } from '../api/review.api';
 
 export const useBook = (bookId: string | undefined) => {
   //관리 권한 로그인 상태
@@ -9,6 +10,7 @@ export const useBook = (bookId: string | undefined) => {
   // const showAlert = useAlert()
 
   const [book, setBook] = useState<TBookDetail | null>(null);
+  const [review, setReview] = useState<TBookReviewItem[]>([]);
   //api
   // const likeToggle = () => {
   //   if(isLoggedIn){
@@ -39,13 +41,16 @@ export const useBook = (bookId: string | undefined) => {
     }
   };
   //낙관적 업데이트 book 전체를 말고 일부만 업데이트
-  //   useEffect(() => {
-  //     fetchBook(bookId).then((data) => {
-  //       setBook(data);
-  //     });
-  //   }, [book]);
+  // useEffect(() => {
+
+  //   fetchBook(bookId).then((data) => {
+  //     setBook(data);
+  //   });
+
+  // }, [book]);
 
   useEffect(() => {
+    //if (!bookId) return;
     const dumyData = dummyBooks;
     const bookData = dumyData.filter((el) => el.id === Number(bookId));
     const bookDetailData = {
@@ -57,7 +62,10 @@ export const useBook = (bookId: string | undefined) => {
     setBook(bookDetailData);
     //categoryName: string;
     //liked: boolean;
+    // fetchBookReview(bookId).then((reviews) => {
+    //   setReview(reviews)
+    // });
   }, [bookId]);
 
-  return { book, likeToggle };
+  return { book, likeToggle, review };
 };

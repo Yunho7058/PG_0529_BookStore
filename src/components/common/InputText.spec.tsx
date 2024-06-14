@@ -10,7 +10,7 @@ describe('InptText 컴포넌트 확인', () => {
     //렌더
     render(
       <BookStoreThemeProvider>
-        <InputText placeholder="입력칸" />
+        <InputText placeholder="입력칸" inputType="text" />
       </BookStoreThemeProvider>
     );
     //확인
@@ -23,7 +23,7 @@ describe('InptText 컴포넌트 확인', () => {
     //렌더
     render(
       <BookStoreThemeProvider>
-        <InputText placeholder="입력칸" ref={ref} />
+        <InputText placeholder="입력칸" ref={ref} inputType="text" />
       </BookStoreThemeProvider>
     );
     //확인

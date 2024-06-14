@@ -39,7 +39,11 @@ const AddTokCart = ({ book }: TProps) => {
   return (
     <AddTokCartStyle $added={cartAdded}>
       <div>
-        <InputText type="number" value={quantity} onChange={handleChange} />
+        <InputText
+          inputType="number"
+          value={quantity}
+          onChange={handleChange}
+        />
         <Button size="medium" scheme="normal" onClick={handleIncrese}>
           +
         </Button>

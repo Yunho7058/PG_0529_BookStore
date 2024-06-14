@@ -1,30 +1,28 @@
 import React, { ForwardedRef } from 'react';
 import styled from 'styled-components';
 
-interface TProps {
+interface TProps extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
-  type?: string;
-  value?: string | number;
-  onChange?: (e: any) => void;
+  inputType?: 'text' | 'email' | 'password' | 'number';
 }
 const InputText = React.forwardRef(
   (
-    { placeholder, type, value, onChange }: TProps,
+    { placeholder, inputType, onChange, ...props }: TProps,
     ref: ForwardedRef<HTMLInputElement>
   ) => {
     return (
       <Back
         placeholder={placeholder}
         ref={ref}
-        type={type}
-        value={value}
-        onChange={(e) => onChange}
+        type={inputType}
+        onChange={onChange}
+        {...props}
       ></Back>
     );
   }
 );
 
-const Back = styled.input.attrs(({ type }) => ({ type: type || 'text' }))`
+const Back = styled.input`
   padding: 0.25rem 0.75rem;
   border: 1px solid ${({ theme }) => theme.color.border};
   border-radius: ${({ theme }) => theme.borderRadius.default};

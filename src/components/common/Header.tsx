@@ -38,13 +38,13 @@ const Header = () => {
       <nav className="auth">
         <ul>
           <li>
-            <Link to="login">
+            <Link to="/login">
               <FaSignInAlt />
               로그인
             </Link>
           </li>
           <li>
-            <Link to="singup">
+            <Link to="/signup">
               <FaRegUser />
               회원가입
             </Link>
