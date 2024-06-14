@@ -19,3 +19,11 @@ export interface TBookDetail extends TBook {
   categoryName: string;
   liked: boolean;
 }
+
+export interface TBookReviewItem {
+  id: number;
+  userName: string;
+  content: string;
+  createdAt: string;
+  score: number;
+}

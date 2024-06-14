@@ -8,6 +8,8 @@ import BookDetail from './pages/BookDetail';
 import Cart from './pages/Cart';
 import Order from './pages/Order';
 import OrderList from './pages/OrderList';
+import Signup from './pages/Signup';
+import ResetPassword from './pages/ResetPassword';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,22 @@ const router = createBrowserRouter([
     errorElement: (
       <Layout>
         <Error />
+      </Layout>
+    ),
+  },
+  {
+    path: '/signup',
+    element: (
+      <Layout>
+        <Signup />
+      </Layout>
+    ),
+  },
+  {
+    path: '/resetPassword',
+    element: (
+      <Layout>
+        <ResetPassword />
       </Layout>
     ),
   },
